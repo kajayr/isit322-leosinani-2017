@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 import {shallow} from 'enzyme';
 import Header from './components/Header';
-import SmallNumbers from './components/SmallNumbers';
+
 describe('My rest basic test', function () {
     it('renders works perfectly fine!!!', () => {
         const div = document.createElement('div');
@@ -14,12 +14,12 @@ describe('My rest basic test', function () {
         expect(true).toBe(true);
     });
 
-    it('simulates to click on get foo button', () => {
-        const wrapper = shallow(<App />);
-        const nineSign = <p className="App-intro">state.foo: bar</p>;
-        wrapper.find('button.getFoo').simulate('click');
-        const ninep = wrapper.find('p').first().debug();
-        //console.log(ninep);
-        expect(wrapper.contains(nineSign)).toEqual(true);
+    it('renders and reads H1 text', () => {
+        const wrapper = shallow(<Header />);
+        const welcome = <h2>Welcome to React</h2>;
+        expect(wrapper.contains(welcome)).toEqual(true);
+
     });
+
+
 });
