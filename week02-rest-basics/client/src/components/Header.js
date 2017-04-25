@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import logo from '../earth.svg';
-import '../App.css';
+import  '../css/App.css';
+import logo from '../images/earth.svg';
 
 //import mocks from './mocks';
 class Header extends Component {

@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+import GetFoo from './components/GetFoo';
 import {shallow} from 'enzyme';
 import Header from './components/Header';
 
 describe('My rest basic test', function () {
     it('renders works perfectly fine!!!', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<App />, div);
+        ReactDOM.render(<GetFoo />, div);
     });
 
     it('Server works well', function () {

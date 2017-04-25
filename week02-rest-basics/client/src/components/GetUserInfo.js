@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import '../App.css';
+import '../css/App.css';
 import 'whatwg-fetch';
 
 //import mocks from './mocks';
@@ -17,17 +17,19 @@ class App extends Component {
 
     }
 
-    getFoo = () => {
-        fetch('/api/foo')
+    getUser = () => {
+
+        const that = this;
+        fetch('/api/user')
             .then(function (response) {
-                console.log('GETONE-FETCH-ONE');
-                return response.json();
+                // YOU WRITE IT
             }).then(function (json) {
-            console.log('GETONE-FETCH-TWO');
-            console.log('parsed json', json);
-            //that.setState(foo => (json));
+            // DISPLAY WITH LOGGER AS NEEDED
+            // PARSE THE JSON BODY INTO JS SINCE IT IS PROPABLY A STRING:
+            var body = JSON.parse(json.body);
+            that.setState({userLogin: body.login});
         }).catch(function (ex) {
-            console.log('parsing failed', ex);
+            // DISPLAY WITH LOGGER
         });
     };
 
@@ -43,10 +45,10 @@ class App extends Component {
                     state.file: {this.state.file}
                 </p>
 
-                <button className="getFoo" onClick={this.getFoo}> Get Foo</button>
+                <button className="getUser" onClick={this.getUser}> Get Foo</button>
             </div>
         );
     }
 }
 
-export default App;
+export default GetUserInfo;

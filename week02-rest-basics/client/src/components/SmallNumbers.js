@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-
-
+import '../css/App.css';
 
 class SmallNumbers extends Component {
     constructor(props) {
