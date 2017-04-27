@@ -2,16 +2,17 @@ import React, {Component} from 'react';
 import '../css/App.css';
 import 'whatwg-fetch';
 
-//import mocks from './mocks';
-//var fetch = require('../mocks').fetch;
-
-
-class App extends Component {
+class GetUserInfo extends Component {
     constructor() {
         super();
         this.state = {
-           gitUser:{}
-
+            gitUser: {
+                login: "Your login information",
+                id: "Your id number",
+                avatar_url: "Your avatar",
+                gravatar_id: "Your avatar ID number",
+                name: "Your name"
+            }
         };
 
     }
@@ -41,13 +42,24 @@ class App extends Component {
                 </p>
 
                 <p className="App-intro">
-                    Avatar URL: {this.state.gitUser.avatar_url}
+                    id: {this.state.gitUser.id}
                 </p>
 
-                <button className="getUser" onClick={this.getUser}> Get Git User</button>
+                <p className="App-intro">
+                    avatar_url: {this.state.gitUser.avatar_url}
+                </p>
+
+                <p className="App-intro">
+                    gravatar_id: {this.state.gitUser.gravatar_id}
+                </p>
+
+                <p className="App-intro">
+                    name: {this.state.gitUser.name}
+                </p>
+
+                <button id="GetUserInfo" onClick={this.getUser}> Get Git User</button>
             </div>
         );
     }
 }
-
 export default GetUserInfo;

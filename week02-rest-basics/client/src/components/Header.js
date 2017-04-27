@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import  '../css/App.css';
 import logo from '../images/earth.svg';
 
-//import mocks from './mocks';
 class Header extends Component {
 
     render() {
