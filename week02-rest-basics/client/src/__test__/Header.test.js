@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import GetFoo from './components/GetFoo';
+import GetFoo from '../components/GetFoo';
 import {shallow} from 'enzyme';
-import Header from './components/Header';
+import Header from '../components/Header';
 
 describe('My rest basic test', function () {
     it('renders works perfectly fine!!!', () => {

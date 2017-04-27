@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {shallow} from 'enzyme';
-import SmallNumbers from './components/SmallNumbers';
-import numbersInit from './numbers-data';
+import SmallNumbers from '../components/SmallNumbers';
+import numbersInit from '../numbers-data';
 
 describe('My rest basic test', function () {
     const getFirst = (wrapper) => {

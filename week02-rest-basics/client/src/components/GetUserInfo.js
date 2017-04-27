@@ -10,8 +10,7 @@ class App extends Component {
     constructor() {
         super();
         this.state = {
-            file: 'Get Nine Result will be placed here.',
-            foo: 'waiting for express server'
+           gitUser:{}
 
         };
 
@@ -22,12 +21,12 @@ class App extends Component {
         const that = this;
         fetch('/api/user')
             .then(function (response) {
-                // YOU WRITE IT
+                return response.json();
             }).then(function (json) {
             // DISPLAY WITH LOGGER AS NEEDED
             // PARSE THE JSON BODY INTO JS SINCE IT IS PROPABLY A STRING:
             var body = JSON.parse(json.body);
-            that.setState({userLogin: body.login});
+            that.setState({gitUser: body});
         }).catch(function (ex) {
             // DISPLAY WITH LOGGER
         });
@@ -38,14 +37,14 @@ class App extends Component {
             <div className="App">
 
                 <p className="App-intro">
-                    state.foo: {this.state.foo}
+                    login: {this.state.gitUser.login}
                 </p>
 
                 <p className="App-intro">
-                    state.file: {this.state.file}
+                    Avatar URL: {this.state.gitUser.avatar_url}
                 </p>
 
-                <button className="getUser" onClick={this.getUser}> Get Foo</button>
+                <button className="getUser" onClick={this.getUser}> Get Git User</button>
             </div>
         );
     }

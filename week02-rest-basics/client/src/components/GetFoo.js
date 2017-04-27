@@ -20,7 +20,7 @@ class App extends Component {
     getFoo = () => {
         fetch('/api/foo')
             .then(function (response) {
-                console.log('GETONE-FETCH-ONE');
+              //  console.log('GETONE-FETCH-ONE');
                 return response.json();
             }).then(function (json) {
             console.log('GETONE-FETCH-TWO');
